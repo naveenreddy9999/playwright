@@ -34,4 +34,19 @@ note: By default it will execute headless mode
    Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions.setHeadless(false).setExecutablePath(Paths.get("/chrome.exe")));
    simlarly edge also
    
+7. navigation methods
+   page.navigate("https://mvnrepository.com/artifact/com.microsoft.playwright/playwright/");
+   page.goBack(new Page.GoBackOptions().setTimeout(500));
+   page.goForward(new Page.GoForwardOptions().setTimeout(500));
+   page.reload();
+   
+8. incognitomode
+   BrowserContext browserContext= playwright.chromium().launchPersistentContext(Paths.get("C:\\Users\\NAVEBAND\\AppData\\Local\\Google\\Chrome\\User Data\\Default"),new BrowserType.LaunchPersistentContextOptions().setHeadless(false).setExecutablePath(Paths.get("C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe")));
+   Page page = browserContext.newPage();
+   
+9 channel
+  if we are executing chromium we can arrange\
+  setChannel()
+  Chrome = chrome
+  EDGE = msedge
 
