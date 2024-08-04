@@ -1,0 +1,16 @@
+package Utilities;
+
+import com.microsoft.playwright.Page;
+
+public class CommonFunctions {
+
+    private Page page;
+
+    public CommonFunctions(Page page){
+        this.page = page;
+    }
+
+    public String pageTitle(){
+        return page.title();
+    }
+}
