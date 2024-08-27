@@ -1,33 +1,32 @@
 package testNGTests;
 
 import Utilities.CommonFunctions;
-import driverSetUp.Drivers;
+import Utilities.CommonInterfaces;
+import pageSetUp.BrowsersSetUp;
 import org.testng.annotations.AfterSuite;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pages.LoginPage;
 
 public class TestOne {
-    Drivers drivers;
+    BrowsersSetUp drivers;
 
     @Test
     @Parameters("browser")
     public void launchChrome(String browser) {
-        drivers = new Drivers();
-        drivers.setDriver(browser);
-        drivers.navigatePage("https://phptravels.com/demo/");
-        CommonFunctions commonFunctions = new CommonFunctions(drivers.getPage());
+        BrowsersSetUp.getInstance().setDriver(browser);
+        BrowsersSetUp.getInstance().navigatePage("https://phptravels.com/demo/");
+        CommonInterfaces commonFunctions = new CommonFunctions();
         System.out.println(commonFunctions.pageTitle());
-        LoginPage loginPage = new LoginPage(drivers.getPage());
+        LoginPage loginPage = new LoginPage();
         loginPage.fillPageLoginDetails();
-        drivers.closePage();
+        BrowsersSetUp.getInstance().closePage();
     }
 
     @AfterSuite
     public void closePageAndSession() {
         System.out.println("Session close");
-        drivers.closeSession();
+        BrowsersSetUp.getInstance().closeSession();
     }
 
 }
