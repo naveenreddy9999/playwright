@@ -1,10 +1,13 @@
 package testcases;
 
-import com.microsoft.playwright.*;
+import com.microsoft.playwright.Browser;
+import com.microsoft.playwright.BrowserType;
+import com.microsoft.playwright.Page;
+import com.microsoft.playwright.Playwright;
 
 import java.awt.*;
 
-public class LaunchBrowser {
+public class BrowserContext {
     public static Page page;
     public static Playwright playwright;
     public static Browser browser;
@@ -15,14 +18,17 @@ public class LaunchBrowser {
         double height = screenSize.getHeight();
         playwright = Playwright.create();
         browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setChannel("chrome").setHeadless(false));
-        BrowserContext browserContext = browser.newContext(new Browser.NewContextOptions().setViewportSize((int) width, (int) height));
-        page = browserContext.newPage();
-        page.navigate("https://www.selenium.dev/downloads/");
-        System.out.println(page.title());
+
+        com.microsoft.playwright.BrowserContext browserContext1 = browser.newContext(new Browser.NewContextOptions().setViewportSize((int) width, (int) height));
+        Page pg1 = browserContext1.newPage();
+        pg1.navigate("https://www.selenium.dev/downloads/");
+        System.out.println(pg1.title());
         Thread.sleep(4000);
-        BrowserContext browserContext1 = browser.newContext(new Browser.NewContextOptions().setViewportSize((int) width, (int) height));
-        page = browserContext1.newPage();
-        page.navigate("https://mvnrepository.com/artifact/com.microsoft.playwright/playwright/");
+
+        com.microsoft.playwright.BrowserContext browserContext2 = browser.newContext(new Browser.NewContextOptions().setViewportSize((int) width, (int) height));
+        Page pg2 = browserContext2.newPage();
+        pg2.navigate("https://mvnrepository.com/artifact/com.microsoft.playwright/playwright/");
+        System.out.println(pg2.title());
         //Thread.sleep(4000);
        /* page.goBack(new Page.GoBackOptions().setTimeout(500));
         Thread.sleep(4000);
@@ -30,7 +36,7 @@ public class LaunchBrowser {
         Thread.sleep(4000);
         page.reload();
         Thread.sleep(4000);*/
-        page.close();
+       // page1.close();
         playwright.close();
     }
 }
