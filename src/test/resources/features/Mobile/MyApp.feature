@@ -5,3 +5,4 @@ Feature: Open My App and test connectivity
 
     Given user connects to MyApp in GlaxyA51
     When user clicks on Agree and continuye
+    Then user clicks on Get your number
