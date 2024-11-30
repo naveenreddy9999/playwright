@@ -50,10 +50,15 @@ public class BrowsersSetUp {
     public synchronized void setDriver(String browserName) {
         playwright = Playwright.create();
         playwrightThreadLocal.set(playwright);
+        String type = System.setProperty("type","true");
+        bollean ss = true;
+        if(!type){
+            ss = false;
+        }
         switch (browserName.toUpperCase()) {
-            case "CHROME" -> browser = getPlaywright().chromium().launch(new BrowserType.LaunchOptions().setHeadless(false).setChannel("chrome").setArgs(setArguments()));
-            case "EDGE" -> browser = getPlaywright().chromium().launch(new BrowserType.LaunchOptions().setHeadless(false).setChannel("msedge").setArgs(setArguments()));
-            case "FIREFOX" -> browser = getPlaywright().firefox().launch(new BrowserType.LaunchOptions().setHeadless(false).setChannel("firefox").setArgs(setArguments()));
+            case "CHROME" -> browser = getPlaywright().chromium().launch(new BrowserType.LaunchOptions().setHeadless(ss).setChannel("chrome").setArgs(setArguments()));
+            case "EDGE" -> browser = getPlaywright().chromium().launch(new BrowserType.LaunchOptions().setHeadless(ss).setChannel("msedge").setArgs(setArguments()));
+            case "FIREFOX" -> browser = getPlaywright().firefox().launch(new BrowserType.LaunchOptions().setHeadless(ss).setChannel("firefox").setArgs(setArguments()));
         }
         browserThreadLocal.set(browser);
         browserContextInheritableThreadLocal.set(getBrowser().newContext(new Browser.NewContextOptions().setViewportSize(null)));
