@@ -1,12 +1,15 @@
 package Runners;
 
-import io.cucumber.testng.AbstractTestNGCucumberTests;
-import io.cucumber.testng.CucumberOptions;
 
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
+import org.junit.runner.RunWith;
+
+@RunWith(Cucumber.class)
 @CucumberOptions(
-        features ={"classpath:features"},glue = {"stepdefinition"},tags = "@myappmobiletest"
+        features ={"classpath:features"}, glue = {"classpath:stepdefinition"},tags = "@myWebTest"
 
 
 )
-public class MobRunner extends AbstractTestNGCucumberTests {
+public class MobRunner  {
 }

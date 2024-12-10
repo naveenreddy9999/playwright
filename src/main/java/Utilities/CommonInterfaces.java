@@ -1,3 +1,4 @@
+/*
 package Utilities;
 
 import com.microsoft.playwright.Locator;
@@ -16,3 +17,4 @@ public interface CommonInterfaces {
 
     String pageTitle();
 }
+*/

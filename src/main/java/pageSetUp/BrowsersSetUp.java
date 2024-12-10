@@ -1,3 +1,4 @@
+/*
 package pageSetUp;
 
 import com.microsoft.playwright.*;
@@ -81,3 +82,4 @@ public class BrowsersSetUp {
         return arguments;
     }
 }
+*/

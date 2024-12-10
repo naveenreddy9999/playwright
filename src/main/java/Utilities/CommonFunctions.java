@@ -1,3 +1,4 @@
+/*
 package Utilities;
 
 import com.microsoft.playwright.Locator;
@@ -44,3 +45,4 @@ public class CommonFunctions implements CommonInterfaces{
         }
     }
 }
+*/

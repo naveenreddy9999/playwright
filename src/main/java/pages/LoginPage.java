@@ -1,3 +1,4 @@
+/*
 package pages;
 
 import Utilities.CommonFunctions;
@@ -36,3 +37,4 @@ public class LoginPage {
         Assert.assertTrue(successMessage.contains("Thank you"));
     }
 }
+*/
