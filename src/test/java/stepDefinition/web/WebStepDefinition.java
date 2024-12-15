@@ -1,8 +1,5 @@
-package stepdefinition.web;
+package stepDefinition.web;
 
-import finservices.mobile.Drivers.AndroidDriverSetup;
-import finservices.mobile.Pages.GetMyNumberPage;
-import finservices.mobile.Pages.MyAppHomePage;
 import finservices.web.Drivers.WebDriverSetup;
 import finservices.web.Pages.WebPage1;
 import io.cucumber.java.en.Given;

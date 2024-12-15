@@ -1,5 +1,5 @@
 
-package stepdefinition.mobile;
+package stepDefinition.mobile;
 
 
 import finservices.mobile.Drivers.AndroidDriverSetup;
@@ -9,7 +9,6 @@ import io.appium.java_client.AppiumDriver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.By;
 
 import java.net.MalformedURLException;
 
