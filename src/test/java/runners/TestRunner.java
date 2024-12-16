@@ -11,7 +11,8 @@ import org.junit.runner.RunWith;
         glue = {"classpath:stepDefinition"},
         monochrome = true,
         stepNotifications = true,
-        tags = "@CRUD_Relations"
+        plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
+        tags = "@PostUserDetails"
 
 
 )

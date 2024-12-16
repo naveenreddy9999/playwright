@@ -11,7 +11,7 @@ Feature: API CRUD Responses
   Scenario: Post API
     Given add person details
     Then Response status code is 201
-    Then Verify person name is "morpheus"
+    Then Verify person name is "naveen"
 
   @PutAPITest
   Scenario: Put API
@@ -38,3 +38,13 @@ Feature: API CRUD Responses
     Given Delete resource details
     Then Response status code is 204
 
+  @PostUserDetails
+  Scenario Outline: Post API
+    Given add name "<name>" and job "<job>"
+    Then Response status code is 201
+    Then Verify person name is "<name>"
+
+    Examples:
+    |name|job|
+    |naveen    | automation tester  |
+    |naveen bandi    | QA |

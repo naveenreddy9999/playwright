@@ -3,6 +3,7 @@ package finservices.api;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.junit.Assert;
+import utilities.ScriptReader;
 
 import java.util.HashMap;
 
@@ -40,15 +41,16 @@ public class ProductsResponses {
     }
 
     public void addPersonDetails() {
-        String payload = """
-                {
-                    "name": "morpheus",
-                    "job": "leader"
-                }""";
+//        String payload = """
+//                {
+//                    "name": "morpheus",
+//                    "job": "leader"
+//                }""";
+        String body = ScriptReader.getInstance().getScriptDetails("payloads/payload","EmployeeData","naveen","Automation Engineer");
         response = RestAssured
                 .given().
                 header("Content-Type", "application/json").
-                body(payload).post(ADD_PERSON_URL + "/2")
+                body(body).post(ADD_PERSON_URL + "/2")
                 .prettyPeek();
         setResponses.put("ID", response.jsonPath().getString("id"));
 
@@ -107,14 +109,13 @@ public class ProductsResponses {
                 .prettyPeek();
     }
 
-
-    public static void main(String[] args) {
-        RestAssured.baseURI = ADD_PERSON_URL;
-        Response response = RestAssured
+    public void addNameAndJob(String name, String job) {
+        String body = ScriptReader.getInstance().getScriptDetails("payloads/payload","EmployeeData",name,job);
+        response = RestAssured
                 .given()
-                .queryParam("page","2")
-                .queryParam("id","2")
-                .get()
+                .header("Content-Type", "application/json")
+                .body(body)
+                .post(ADD_PERSON_URL + "/2")
                 .prettyPeek();
     }
 }

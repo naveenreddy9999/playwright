@@ -58,4 +58,9 @@ public class APIResponsesStepDefinition {
     public void deleteResourceDetails() {
         productsResponses.deleteResourceDetails();
     }
+
+    @Given("add name {string} and job {string}")
+    public void addNameAndJob(String name, String job) {
+        productsResponses.addNameAndJob(name,job);
+    }
 }
