@@ -101,7 +101,7 @@
                 <version>3.0.0-M7</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>${pom.basedir}/src/main/resources/testngFiles/testng.xml</suiteXmlFile>
+                        <suiteXmlFile>${pom.basedir}/src/main/resources/testngFiles/testNG.xml</suiteXmlFile>
                     </suiteXmlFiles>
                     <parallel>Tests</parallel>
                     <threadCount>4</threadCount>
