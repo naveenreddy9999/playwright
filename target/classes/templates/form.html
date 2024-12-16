@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Run Tests</title>
+</head>
+<body>
+<h1>Run Tests</h1>
+<form action="http://localhost:8080/run-tests" method="post">
+    <label for="suiteFilePath">Suite File Path:</label>
+    <input type="text" id="suiteFilePath" name="suiteFilePath"><br><br>
+    <label for="mainClass">Main Class:</label>
+    <input type="text" id="mainClass" name="mainClass"><br><br>
+    <label for="testClass">Test Class:</label>
+    <input type="text" id="testClass" name="testClass"><br><br>
+    <label for="projectDir">Project Directory:</label>
+    <input type="text" id="projectDir" name="projectDir"><br><br>
+    <input type="submit" value="Run">
+</form>
+</body>
+</html>

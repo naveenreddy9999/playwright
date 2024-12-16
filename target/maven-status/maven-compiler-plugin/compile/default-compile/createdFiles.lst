@@ -1,0 +1,5 @@
+Utilities\PropertyReader.class
+pages\LoginPage.class
+Utilities\CommonInterfaces.class
+pageSetUp\BrowsersSetUp.class
+Utilities\CommonFunctions.class

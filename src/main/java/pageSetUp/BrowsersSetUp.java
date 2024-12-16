@@ -51,9 +51,9 @@ public class BrowsersSetUp {
         playwright = Playwright.create();
         playwrightThreadLocal.set(playwright);
         switch (browserName.toUpperCase()) {
-            case "CHROME" -> browser = getPlaywright().chromium().launch(new BrowserType.LaunchOptions().setHeadless(false).setChannel("chrome").setArgs(setArguments()));
-            case "EDGE" -> browser = getPlaywright().chromium().launch(new BrowserType.LaunchOptions().setHeadless(false).setChannel("msedge").setArgs(setArguments()));
-            case "FIREFOX" -> browser = getPlaywright().firefox().launch(new BrowserType.LaunchOptions().setHeadless(false).setChannel("firefox").setArgs(setArguments()));
+            case "CHROME" -> browser = getPlaywright().chromium().launch(new BrowserType.LaunchOptions().setHeadless(true).setChannel("chrome").setArgs(setArguments()));
+            case "EDGE" -> browser = getPlaywright().chromium().launch(new BrowserType.LaunchOptions().setHeadless(true).setChannel("msedge").setArgs(setArguments()));
+            case "FIREFOX" -> browser = getPlaywright().firefox().launch(new BrowserType.LaunchOptions().setHeadless(true).setChannel("firefox").setArgs(setArguments()));
         }
         browserThreadLocal.set(browser);
         browserContextInheritableThreadLocal.set(getBrowser().newContext(new Browser.NewContextOptions().setViewportSize(null)));

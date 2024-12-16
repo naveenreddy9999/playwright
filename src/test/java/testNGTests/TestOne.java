@@ -14,6 +14,8 @@ public class TestOne {
     @Test
     @Parameters("browser")
     public void launchChrome(String browser) {
+        System.out.println("TestOne");
+        System.out.println(browser);
         BrowsersSetUp.getInstance().setDriver(browser);
         BrowsersSetUp.getInstance().navigatePage("https://phptravels.com/demo/");
         CommonInterfaces commonFunctions = new CommonFunctions();

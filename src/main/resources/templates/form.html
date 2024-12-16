@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Run Tests</title>
+</head>
+<body>
+<h1>Run Tests</h1>
+<form action="/run-tests" method="post">
+    <input type="text" name="suiteFilePath" placeholder="Suite File Path">
+    <input type="text" name="mainClass" placeholder="Main Class">
+    <input type="text" name="testClass" placeholder="Test Class">
+        <select>
+            <option name="testClass">Select Options</option>
+            <option name="testClass">testNGTests/TestOne</option>
+        </select>
+    </input>
+    <input type="text" name="projectDir" placeholder="Project Directory">
+    <select>
+        <option name="projectDir">Select Options</option>
+        <option name="projectDir">C:\Users\nb3485\IdeaProjects\playwright</option>
+    </select>
+    </input>
+    <button type="submit">Run</button>
+</form>
+</body>
+</html>
