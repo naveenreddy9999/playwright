@@ -1,11 +1,13 @@
 package stepDefinition.api;
 
 import finservices.api.ProductsResponses;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 
 public class APIResponsesStepDefinition {
     ProductsResponses productsResponses;
+
     public APIResponsesStepDefinition(){
         this.productsResponses=ProductsResponses.getInstance();
     }

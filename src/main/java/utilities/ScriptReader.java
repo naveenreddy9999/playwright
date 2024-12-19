@@ -32,11 +32,9 @@ public class ScriptReader {
             engine.eval(new BufferedReader(new InputStreamReader(Objects.requireNonNull(ScriptReader.class.getResourceAsStream("/"+filePath+".js")))));
             Invocable invocable = (Invocable) engine;
             object = invocable.invokeFunction(functionName, name,job);
-        } catch (ScriptException | NoSuchMethodException e) {
-            throw new RuntimeException(e);
+        } catch (ScriptException | NoSuchMethodException exception) {
+            throw new RuntimeException(exception);
         }
-//        Object jO = convertToJavaObject(object);
-//        List<?> l = convertObjectToList(jO);
         return object.toString();
     }
 

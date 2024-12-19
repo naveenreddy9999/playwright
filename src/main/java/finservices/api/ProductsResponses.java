@@ -1,8 +1,10 @@
 package finservices.api;
 
+import io.cucumber.java.Scenario;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.junit.Assert;
+import utilities.ScenarioReader;
 import utilities.ScriptReader;
 
 import java.util.HashMap;
@@ -32,6 +34,7 @@ public class ProductsResponses {
     }
 
     public void validateStatusCode(int statusCode) {
+        ScenarioReader.getInstance().logScenario(String.valueOf(response.getStatusCode()));
         Assert.assertEquals("Response is not matching with expected", statusCode, response.getStatusCode());
     }
 
