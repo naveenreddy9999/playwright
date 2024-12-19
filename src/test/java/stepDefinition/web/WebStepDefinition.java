@@ -5,9 +5,10 @@ import finservices.web.Pages.WebPage1;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.WebDriver;
+import utilities.ScenarioReader;
 
 public class WebStepDefinition {
-WebDriver webdriver;
+    WebDriver webdriver;
     WebPage1 webpage1;
     public  WebStepDefinition(){
         this.webdriver = WebDriverSetup.getInstance().getDriver();
@@ -26,6 +27,7 @@ WebDriver webdriver;
     public void clicks_on_link() throws InterruptedException {
         //WebPage1 webpage1 = new WebPage1(WebDriverSetup.getInstance().getDriver());
         // Write code here that turns the phrase above into concrete actions
+        ScenarioReader.getInstance().attachScreenshot(webdriver,"hello");
         WebPage1.clickonlink();
     }
 }
