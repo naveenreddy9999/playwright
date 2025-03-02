@@ -11,7 +11,10 @@ on:
         description: 'Run in headless mode (true or false)'
         required: true
         default: 'true'
-
+      suite:  
+        description: 'run suite(regrsession,sanity)'
+        required: true
+        default: 'suite'
 jobs:
   test:
     runs-on: ubuntu-latest
