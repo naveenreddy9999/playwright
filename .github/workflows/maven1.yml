@@ -1,0 +1,34 @@
+name: Dynamic Command Pass Example
+
+on:
+  workflow_dispatch:
+    inputs:
+      browser:
+        description: 'Choose the browser (chromium, firefox, webkit)'
+        required: true
+        default: 'chromium'
+      headless:
+        description: 'Run in headless mode (true or false)'
+        required: true
+        default: 'true'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up JDK
+      uses: actions/setup-java@v2
+      with:
+        java-version: '11'
+    
+    - name: Install dependencies
+      run: ./gradlew build
+    
+    - name: Run Playwright tests with dynamic browser and headless option
+      run: |
+        ./gradlew test -Dbrowser=${{ github.event.inputs.browser }} -Dheadless=${{ github.event.inputs.headless }}
+
