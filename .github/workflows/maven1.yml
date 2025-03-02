@@ -15,6 +15,26 @@ on:
         description: 'run suite(regrsession,sanity)'
         required: true
         default: 'suite'
+        
+      browsers:
+        description: 'Select the browser for testing'
+        required: true
+        type: choice
+        options:
+          - chromium
+          - firefox
+          - webkit
+        default: 'chromium'
+        
+      headlesss:
+        description: 'Run tests in headless mode?'
+        required: true
+        type: choice
+        options:
+          - true
+          - false
+        default: 'true'
+
 jobs:
   test:
     runs-on: ubuntu-latest
